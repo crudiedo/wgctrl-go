@@ -16,10 +16,10 @@ func newClients() ([]wginternal.Client, error) {
 	// Linux has an in-kernel WireGuard implementation. Determine if it is
 	// available and make use of it if so.
 	kc, ok, err := wglinux.New()
-	if err != nil {
-		return nil, err
-	}
-	if ok {
+
+	// The reason of my fork - if we've got an error when trying to use in-kernel implementation,
+	// we should try to use userspace instead
+	if err == nil && ok {
 		clients = append(clients, kc)
 	}
 
