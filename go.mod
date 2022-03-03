@@ -1,4 +1,4 @@
-replace golang.zx2c4.com/wireguard/wgctrl => github.com/crudiedo/wgctrl-go master
+replace golang.zx2c4.com/wireguard/wgctrl => github.com/crudiedo/wgctrl-go v0.0.0-20220303081048-6db5b7361d01
 
 module golang.zx2c4.com/wireguard/wgctrl
 
